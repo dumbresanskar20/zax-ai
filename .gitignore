@@ -1,0 +1,18 @@
+# Environment variables
+.env
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Local system capture and temporary files
+screenshot_*.png
+captured_*.png
+file_*.txt
+
+# Editor / IDE configuration
+.vscode/

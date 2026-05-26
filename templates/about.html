@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>About - Zax Ai</title>
+    <style>
+        .banner-title {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Further code here -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="bottom-shape"></div>
+                <div class="site-logo">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/site-logo.svg" alt="site-logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/search-icon.svg" alt="search-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="circuit-art">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork.svg" alt="GoodArtwork">
+        </div>
+        <div class="machine-art">
+            <div class="machine-art-container">
+                <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machin-rings.svg" alt="GoodArtwork">
+                <div class="machine-lights-container">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machine-lights.svg" alt="GoodArtwork">
+                </div>
+            </div>
+        </div>
+        <div class="circuit-art red">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork-red.svg" alt="GoodArtwork">
+        </div>
+        <div class="banner-content">
+            <div class="container">
+                <div class="banner-title">
+                    <h1>ZAX &nbsp; AI</h1>
+                </div>
+                <section class="card1">
+                    <section class="card2">
+                        <section class="features card">
+                            <h2>What We Do</h2>
+                            <li><strong>Manage Tasks:</strong> Set reminders, create to-do lists, and organize your schedule using simple voice commands.</li>
+                            <li><strong>Access Information:</strong> Get answers to questions, fetch weather updates, or find news headlines—all with your voice.</li>
+                        </section>
+                        <section class="mission card">
+                            <h2>Our Mission</h2>
+                            <p>Our mission is to provide an intuitive and accessible voice assistant that adapts to your needs. We believe in making technology work for you, not the other way around. By focusing on user experience and cutting-edge technology,
+                                we aim to create a tool that enhances your daily life and makes everyday tasks more manageable.</p>
+                        </section>
+                    </section>
+                    <section class="card2">
+                        <section class="how-it-works card">
+                            <h2>How It Works</h2>
+                            <p>Our voice assistant leverages the latest advancements in artificial intelligence and natural language processing to understand and respond to your commands accurately. Whether you're at home, in the office, or on the go, Zax Ai is here to assist you whenever you need it.</p>
+                        </section>
+                        <section class="team card">
+                            <h2>Meet the Team</h2>
+                            <p>Our team is composed of passionate individuals dedicated to pushing the boundaries of voice technology. From experienced developers to AI specialists, we work tirelessly to ensure that Zax Ai delivers a top-notch experience
+                                for our users.</p>
+                        </section>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

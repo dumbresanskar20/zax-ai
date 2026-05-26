@@ -1,0 +1,20 @@
+pip install flask
+pip install opencv-python
+pip install mediapipe
+pip install pyautogui
+pip install pygetwindow
+pip install SpeechRecognition
+pip install pyaudio
+pip install time
+pip install uuid
+pip install sys
+pip install flask flask-socketio eventlet speechrecognition pyautogui pygetwindow
+pip install flask_cors
+npm install three
+pip install flask flask-socketio speechrecognition
+pip install pyscreeze pillow
+pip install flask flask-socketio eventlet speechrecognition pyaudio
+pip install pyaudio speechrecognition
+pip install pipwin
+pip install load_dotenv
+pip install flask_mail

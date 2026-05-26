@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - Zax Ai</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="bottom-shape"></div>
+                <div class="site-logo">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/site-logo.svg" alt="site-logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/search-icon.svg" alt="search-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="circuit-art">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork.svg" alt="GoodArtwork">
+        </div>
+        <div class="machine-art">
+            <div class="machine-art-container">
+                <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machin-rings.svg" alt="GoodArtwork">
+                <div class="machine-lights-container">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machine-lights.svg" alt="GoodArtwork">
+                </div>
+            </div>
+        </div>
+        <div class="circuit-art red">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork-red.svg" alt="GoodArtwork">
+        </div>
+        <div class="banner-content">
+            <div class="container">
+                <div class="banner-title">
+                    <h1>ZAX &nbsp;AI </h1>
+                </div>
+                <div class="feedback-container">
+                    <div class="feedback-header">
+                        <!-- <h2><b class="EZ">ZAX  AI </b> Feedback</h2> -->
+                        <p>We value your feedback! Please share your experience with us.</p>
+                    </div>
+                    <p></p>
+                    <form action="{{ url_for('contact') }}" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Feedback" required></textarea>
+
+                        <center>
+                            <label>Rate Us:</label>
+                        </center>
+                        <div class="stars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="hidden" name="rating" id="rating-value" required>
+
+                        <button type="submit">Submit Feedback</button>
+                    </form>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %} {% endif %} {% endwith %}
+
+                </div>
+                <script>
+                    const stars = document.querySelectorAll('.star');
+                    const ratingInput = document.getElementById('rating-value');
+                    stars.forEach(star => {
+                        star.addEventListener('click', function() {
+                            const value = this.getAttribute('data-value');
+                            ratingInput.value = value;
+                            // Highlight stars
+                            stars.forEach(s => {
+                                s.classList.remove('active');
+                                if (s.getAttribute('data-value') <= value) {
+                                    s.classList.add('active');
+                                }
+                            });
+                        });
+                    });
+                </script>
+                <script src="{{ url_for('static', filename='script.js') }}"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

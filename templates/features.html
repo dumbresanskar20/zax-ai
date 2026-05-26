@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='features.css') }}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>features - Zax Ai</title>
+    <style>
+        .boon-bane-container {
+            margin-top: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Further code here -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="bottom-shape"></div>
+                <div class="site-logo">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/site-logo.svg" alt="site-logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/search-icon.svg" alt="search-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="circuit-art">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork.svg" alt="GoodArtwork">
+        </div>
+        <div class="machine-art">
+            <div class="machine-art-container">
+                <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machin-rings.svg" alt="GoodArtwork">
+                <div class="machine-lights-container">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machine-lights.svg" alt="GoodArtwork">
+                </div>
+            </div>
+        </div>
+        <div class="circuit-art red">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork-red.svg" alt="GoodArtwork">
+        </div>
+        <div class="banner-content">
+            <div class="container">
+                <div class="banner-title">
+                    <h1>ZAX &nbsp; AI</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="blue-content">
+                            <!--  -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="red-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="con">
+            <div class="icons">
+                <div class="icon11" onclick="displayContent('Calculator', 'The calculator icon opens a simple calculator for quick calculations. You can use a voice command to launch the calculator app instantly. This makes solving calculations faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/GNOME_Calculator_icon_2018.svg/640px-GNOME_Calculator_icon_2018.svg.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/GNOME_Calculator_icon_2018.svg/128px-GNOME_Calculator_icon_2018.svg.png" alt="File:GNOME Calculator icon 2018.svg" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+                <div class="icon11" onclick="displayContent('Microsoft Store', 'The Microsoft Store icon opens a view where you can browse apps and games. You can use a voice command to launch the store instantly. This makes finding and downloading apps faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Microsoft_Store_Fluent_Design_icon_Windows_11.png/640px-Microsoft_Store_Fluent_Design_icon_Windows_11.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Microsoft_Store_Fluent_Design_icon_Windows_11.png/180px-Microsoft_Store_Fluent_Design_icon_Windows_11.png" alt="File:Microsoft Store Fluent Design icon Windows 11.png" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+                <div class="icon11" onclick="displayContent('Command Prompt', 'The Command Prompt icon opens a terminal for running commands. You can use a voice command to launch it instantly. This makes accessing system tools faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/GNOME_Terminal_icon_2019.svg/640px-GNOME_Terminal_icon_2019.svg.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/GNOME_Terminal_icon_2019.svg/128px-GNOME_Terminal_icon_2019.svg.png" alt="File:GNOME Terminal icon 2019.svg" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+
+                <div class="icon11" onclick="displayContent('Mail', 'The mail icon opens a message view where you can see your emails. You can use a voice command to open your mail app instantly. This makes checking emails faster and easier.')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Mail">
+                </div>
+                <div class="icon11" onclick="displayContent('Paint', 'The Paint icon opens a simple drawing tool for creating and editing images. You can use a voice command to launch it instantly. This makes drawing and editing faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Microsoft_Paint.svg/640px-Microsoft_Paint.svg.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Microsoft_Paint.svg/250px-Microsoft_Paint.svg.png" alt="File:Microsoft Paint.svg" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+                <div class="icon11" onclick="displayContent('WhatsApp', 'The WhatsApp icon opens the chat application for messaging and calls. You can use a voice command to launch it instantly. This makes communication faster and easier.')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                </div>
+                <div class="icon11" onclick="displayContent('Notepad', 'The Notepad icon opens a simple text editor for writing and editing notes. You can use a voice command to launch it instantly. This makes note-taking faster and easier.')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Notepad">
+                </div>
+                <div class="icon11" onclick="displayContent('Word', 'The Word icon opens a document editor for creating and editing files. You can use a voice command to launch it instantly. This makes working on documents faster and easier.')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Word">
+                </div>
+                <div class="icon11" onclick="displayContent('Camera', 'The Camera icon opens the camera for taking photos and videos. You can use a voice command to launch it instantly. This makes capturing moments faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/GNOME_Photos_icon_2018.svg/640px-GNOME_Photos_icon_2018.svg.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/GNOME_Photos_icon_2018.svg/128px-GNOME_Photos_icon_2018.svg.png" alt="File:GNOME Photos icon 2018.svg" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+                <div class="icon11" onclick="displayContent('PowerPoint', 'The PowerPoint icon opens a presentation editor for creating and editing slides. You can use a voice command to launch it instantly. This makes working on presentations faster and easier.')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732224.png" alt="PowerPoint">
+                </div>
+                <div class="icon11" onclick="displayContent('Excel', 'The Excel icon opens a spreadsheet editor for managing data and calculations. You can use a voice command to launch it instantly. This makes working with spreadsheets faster and easier.')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel">
+                </div>
+                <div class="icon11" onclick="displayContent('Telegram', 'The Telegram icon opens the messaging app for chats and calls. You can use a voice command to launch it instantly. This makes communication faster and easier.')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                </div>
+                <div class="icon11" onclick="displayContent('Google', 'The Google icon opens the search engine for finding information. You can use a voice command to launch it instantly. This makes searching faster and easier.')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                </div>
+                <div class="icon11" onclick="displayContent('Outlook', 'The Outlook icon opens the email app for sending and receiving messages. You can use a voice command to launch it instantly. This makes managing emails faster and easier.')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/640px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook">
+                </div>
+                <div class="icon11" onclick="displayContent('Settings', 'The Settings icon opens system options for customizing your device. You can use a voice command to launch it instantly. This makes adjusting settings faster and easier.')">
+                    <img srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Windows_Settings_app_icon_%282%29.png/640px-Windows_Settings_app_icon_%282%29.png 640w" sizes="640px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Windows_Settings_app_icon_%282%29.png/180px-Windows_Settings_app_icon_%282%29.png" alt="File:Windows Settings app icon (2).png" class="sdms-quick-view__thumbnail sdms-quick-view__thumbnail--loaded">
+                </div>
+                <div class="icon11" onclick="displayContent('Chrome','The Chrome icon opens the web browser for browsing the internet. You can use a voice command to launch it instantly. This makes accessing websites faster and easier.')">
+                    <img alt="File:Google Chrome icon (February 2022).svg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/48px-Google_Chrome_icon_%28February_2022%29.svg.png?20231015142139" decoding="async" width="48" height="48" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/72px-Google_Chrome_icon_%28February_2022%29.svg.png?20231015142139 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/96px-Google_Chrome_icon_%28February_2022%29.svg.png?20231015142139 2x" data-file-width="48" data-file-height="48">
+
+
+                </div>
+            </div>
+            
+            <!-- Display Section -->
+            <div class="display">
+               <br><br><br><br> <h2 id="displayTitle">Click an icon</h2><br>
+                <p id="displayText"></p>
+            </div>
+            
+            <!-- JavaScript -->
+            <script>
+                function displayContent(title, description) {
+                    let titleElement = document.getElementById("displayTitle");
+                    let textElement = document.getElementById("displayText");
+                
+                    // Apply fade-out effect before changing content
+                    titleElement.style.opacity = 0;
+                    textElement.style.opacity = 0;
+                
+                    setTimeout(() => {
+                        titleElement.innerText = title;
+                        textElement.innerText = description;
+                
+                        // Apply fade-in effect after changing content
+                        titleElement.style.opacity = 1;
+                        textElement.style.opacity = 1;
+                    }, 300); // Wait for fade-out before updating content
+                }
+                
+            </script>
+            
+            
+        
+        <script>
+           
+        </script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+</body>
+
+</html>

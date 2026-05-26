@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Home - Zax Ai</title>
+    <style>
+        #recognized_commands {
+            color: white;
+            position:absolute;
+            left:-15%;
+            top:17%;
+        }
+        #start_listening{
+            position:absolute;
+            top:38%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Further code here -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="bottom-shape"></div>
+                <div class="site-logo">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/site-logo.svg" alt="site-logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/search-icon.svg" alt="search-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="banner-title bt">
+            <h1>ZAX &nbsp; AI</h1>
+        </div>
+        <div class="robot">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/robot.png" alt="robot">
+        </div>
+        <div class="circuit-art">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork.svg" alt="GoodArtwork">
+        </div>
+        <div class="machine-art">
+            <div class="machine-art-container">
+                <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machin-rings.svg" alt="GoodArtwork">
+                <div class="machine-lights-container">
+                    <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/machine-lights.svg" alt="GoodArtwork">
+                </div>
+            </div>
+        </div>
+        <div class="circuit-art red">
+            <img src="https://www.yudiz.com/codepen/artificial-intelligence/images/GoodArtwork-red.svg" alt="GoodArtwork">
+        </div>
+        <div class="banner-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="red-content">
+                            <div id="recognized_commands">Press "Start Listening" to begin.</div>
+                            <button id="start_listening">Start Listening</button>
+                            <button id="stop_listening" style="display: none;">Stop Listening</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#stop_listening').hide();
+            let isListening = false;
+            let socket = io.connect('http://' + document.domain + ':' + location.port, {
+                reconnection: true,
+                reconnectionAttempts: 5,
+                reconnectionDelay: 2000
+            });
+
+            function updateUI(listening) {
+                if (listening) {
+                    $('#recognized_commands').text('Listening...');
+                    $('#start_listening').hide();
+                    $('#stop_listening').show();
+                } else {
+                    $('#recognized_commands').text('Stopped listening.');
+                    $('#start_listening').show();
+                    $('#stop_listening').hide();
+                }
+            }
+            $('#start_listening').click(function() {
+                if (!isListening) {
+                    isListening = true;
+                    updateUI(true);
+                    socket.emit('start_listening');
+                }
+            });
+            $('#stop_listening').click(function() {
+                if (isListening) {
+                    isListening = false;
+                    updateUI(false);
+                    socket.emit('stop_listening');
+                }
+            });
+            socket.on('recognized_word', function(data) {
+                if (data.word) {
+                    $('#recognized_commands').text(data.word);
+                } else {
+                    $('#recognized_commands').text("No speech detected. Try again.");
+                }
+            });
+            socket.on('disconnect', function() {
+                isListening = false;
+                updateUI(false);
+                $('#recognized_commands').text("Connection lost. Reconnecting...");
+            });
+        });
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
